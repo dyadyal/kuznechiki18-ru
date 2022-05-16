@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"></script>
+  <script src="https://widget.cloudpayments.ru/bundles/cloudpayments.js"></script>
+  <div class="donation">
+    <div class="donation__block">
+      <h3 class="donation__title">
+        Вы тоже можете помочь
+      </h3>
+  
+      <div class="donation__frequency">
+        <div class="donation__frequency-wrapper">
+          <div class="donation__frequency-item js-donation-frequency" data-frequency="monthly">
+            Ежемесячно
+          </div>
+          <div class="donation__frequency-item js-donation-frequency selected" data-frequency="once">
+            Разово
+          </div>
+        </div>
+      </div>
+  
+      <div class="donation__amount">
+        <div class="donation__amount-wrapper">
+          <div class="donation__amount-item js-donation-amount" data-amount="169">
+            169 ₽
+          </div>
+          <div class="donation__amount-item js-donation-amount selected" data-amount="500">
+            500 ₽
+          </div>
+          <div class="donation__amount-item js-donation-amount" data-amount="1500">
+            1500 ₽
+          </div>
+          <input type="number" class="donation__amount-item donation__amount-item--custom js-donation-amount js-donation-amount-custom" placeholder="Другая" data-amount="custom">
+        </div>
+        <div class="donation__error-text js-amount-error"></div>
+      </div>
+  
+      <p class="donation__info-label js-info-label">
+        Час работы тренера
+      </p>
+  
+      <div class="donation__form">
+        <div class="donation__form-row">
+          <input type="text" class="donation__form-input js-name-field" placeholder="Имя">
+          <div class="donation__error-text js-name-error"></div>
+        </div>
+  
+        <div class="donation__form-row donation__form-row--two-columns">
+  
+          <div class="donation__form-column">
+            <input type="phone" class="donation__form-input js-phone-field" placeholder="Телефон (только цифры)">
+            <div class="donation__error-text js-phone-error"></div>
+          </div>
+  
+          <div class="donation__form-column">
+            <input type="email" class="donation__form-input js-email-field" placeholder="E-Mail">
+            <div class="donation__error-text js-email-error"></div>
+          </div>
+  
+        </div>
+  
+        <div class="donation__form-row">
+          <input type="text" class="donation__form-input js-comment-field" placeholder="Комментарий">
+        </div>
+  
+        <p class="donation__form-info">
+          Нажимая кнопку "помочь", я принимаю условия <a href="https://yadi.sk/i/asMw5SYOIOVRPw">договора-оферты</a>
+        </p>
+  
+        <div class="donation__form-btn js-donation-form-btn">
+          Помочь
+        </div>
+      </div>
+    </div>
+  
+    <div class="donation__helped">
+      <h3 class="donation__title">
+        Спасибо за вашу помощь футболистам
+      </h3>
+  
+      <ul class="donation__list js-donation-list">
+      </ul>
+    </div>
+  
+  </div>
+  </body>
+</html>

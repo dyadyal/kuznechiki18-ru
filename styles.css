@@ -1,0 +1,341 @@
+  /** {*/
+  /*  box-sizing: border-box;*/
+  /*}*/
+
+  body {
+    font-family: 'Geometria', sans-serif;
+  }
+
+  .t706 {
+    display: none !important;
+  }
+
+  .donation {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    margin: 0 -10px;
+  }
+
+  @media (max-width: 960px) {
+    .donation {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+  }
+
+  .donation__block,
+  .donation__helped {
+    width: calc(50% - 20px);
+    margin: 0 10px;
+    padding: 30px 55px 45px;
+    border-radius: 5px;
+    background: #F7F7F7;
+  }
+
+  @media (max-width: 960px) {
+
+    .donation__block,
+    .donation__helped {
+      width: 100%;
+      margin: 10px 0;
+      padding: 30px 15px;
+    }
+  }
+
+  .donation__title {
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    word-break: break-word;
+    color: #333;
+  }
+
+  @media (max-width: 960px) {
+    .donation__title {
+      font-size: 30px;
+    }
+  }
+
+
+  @media (max-width: 480px) {
+    .donation__title {
+      font-size: 24px;
+    }
+  }
+
+  .donation__frequency-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background: #fff;
+  }
+
+  @media (max-width: 480px) {
+
+    .donation__frequency-wrapper {
+      flex-direction: column;
+      background: none;
+    }
+  }
+
+  .donation__frequency-item {
+    width: 50%;
+    padding: 12px 50px;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px;
+    color: #333;
+    background: #fff;
+    transition: .3s ease;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+
+
+  @media (max-width: 480px) {
+    .donation__frequency-item {
+      width: 100%;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+  }
+
+  .donation__frequency-item:hover,
+  .donation__frequency-item.selected {
+    color: #fff;
+    background: #666;
+  }
+
+  .donation__amount-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background: #fff;
+  }
+
+  .donation__amount-item {
+    width: 25%;
+    padding: 12px 30px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    border-radius: 5px;
+    color: #333;
+    background: #fff;
+    transition: .3s ease;
+    cursor: pointer;
+  }
+
+  @media (max-width: 480px) {
+    .donation__amount-item {
+      padding: 12px 10px;
+    }
+  }
+
+  .donation__amount-item--custom {
+    outline: none;
+    border: none;
+  }
+
+  .donation__amount-item--custom:hover::placeholder {
+    color: #fff;
+    font-weight: 400;
+  }
+
+  .donation__amount-item:hover,
+  .donation__amount-item.selected {
+    font-weight: 700;
+    color: #fff;
+    background: #666;
+  }
+
+  .donation__info-label {
+    font-size: 14px;
+    margin: 10px 0 20px;
+    text-align: center;
+    color: #000;
+  }
+
+  .donation__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .donation__form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  .donation__form-row--two-columns .donation__form-column {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(50% - 20px);
+    margin-right: 20px;
+  }
+
+  @media (max-width: 480px) {
+    .donation__form-row--two-columns .donation__form-column {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  .donation__form-row--two-columns .donation__form-column:last-child {
+    width: 50%;
+    margin-right: 0;
+  }
+
+  @media (max-width: 480px) {
+    .donation__form-row--two-columns .donation__form-column:last-child {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+
+  .donation__form-input {
+    display: block;
+    width: 100%;
+    height: 45px;
+    padding: 0 12px;
+    font-weight: 400;
+    color: #666;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background: #fff;
+  }
+
+  .donation__form-input:placeholder {
+    color: #666;
+  }
+
+
+  .donation__form-input:focus {
+    appearance: none;
+    outline: none;
+    border: none;
+  }
+
+  .donation__form-info {
+    margin: 10px 0 15px;
+    font-size: 12px;
+    text-align: center;
+    color: #666;
+  }
+
+  @media (max-width: 480px) {
+    .donation__form-info {
+      text-align: left;
+    }
+  }
+
+
+  .donation__form-btn {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px;
+    color: #f7f7f7;
+    background: #16579E;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+
+  .donation__error-text {
+    display: none;
+    width: 100%;
+    margin-top: 10px;
+    color: #ff5500;
+    font-size: 13px;
+    text-align: left;
+  }
+
+  .donation__list {
+    position: relative;
+    max-height: 360px;
+    height: 100%;
+    margin: 0;
+    padding: 0 !important;
+    overflow: hidden;
+  }
+  
+  .donation__list:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg,rgba(247,247,247,0.5) 0%, rgba(247,247,247,0.5) 5%, rgba(247,247,247,0) 100%);
+  }
+
+  .donation__item {
+    margin-bottom: 40px;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  .donation__item-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .donation__item-line {
+    width: 100%;
+    height: 3px;
+    background: #16579E;
+  }
+
+  .donation__item-name,
+  .donation__item-amount {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+  }
+
+  .donation__item-time {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: right;
+    color: #666;
+  }
+  
+  .donation input,
+  .donation input::placeholder {
+      font-family: 'Geomteria', sans-serif !important;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+  
+  .t706__body_cartwinshowed {
+    height: auto !important;
+    min-height: !important;
+    overflow: visible !important;
+}

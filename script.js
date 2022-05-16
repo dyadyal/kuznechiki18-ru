@@ -331,4 +331,5 @@ this.pay = function () {
     }
   );
 };
+$('.js-donation-form-btn').off('click');
 $('.js-donation-form-btn').on('click',pay);

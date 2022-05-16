@@ -288,7 +288,13 @@ $(document).ready(function () {
   });
 });
 this.pay = function () {
-  var widget = new cp.CloudPayments();
+  var widget = new cp.CloudPayments(),
+    data = {};
+
+  if (jQuery('.js-donation-frequency.selected').attr('data-frequency') == "monthly") {
+    data.cloudPayments = { recurrent: { interval: 'Month', period: 1 } };
+  }
+
   var amount = 0;
   if (jQuery('.js-donation-amount.selected').is('input')) {
     amount = jQuery('.js-donation-amount.selected').val();
@@ -299,37 +305,33 @@ this.pay = function () {
       .replaceAll(' ', '')
       .replace('₽', '');
   }
-  widget.pay(
-    'auth', // или 'charge'
-    {
-      //options
-      publicId: 'pk_e8e765af966f938a24d85a856d619', //id из личного кабинета
-      description: 'Оплата товаров в example.com', //назначение
-      amount: parseFloat(amount), //сумма
-      currency: 'RUB', //валюта
-      accountId: 'user@example.com', //идентификатор плательщика (необязательно)
-      invoiceId: '1234567', //номер заказа  (необязательно)
-      email: jQuery('.js-email-field').val(), //email плательщика (необязательно)
-      skin: 'mini', //дизайн виджета (необязательно)
-      data: {
-        myProp: 'myProp value',
-      },
+
+  widget.charge({
+    language: 'ru-RU',
+    publicId: 'pk_e8e765af966f938a24d85a856d619',
+    description: 'Пожертвование kuznechiki18.ru',
+    amount: parseFloat(amount),
+    currency: 'RUB',
+    accountId: 'user@example.com',
+    invoiceId: '1234567',
+    email: jQuery('.js-email-field').val(), //email плательщика (необязательно)
+    skin: 'mini', //дизайн виджета (необязательно)
+    data: data
+  }, {
+    onSuccess: function (options) {
+      // success
+      //действие при успешной оплате
     },
-    {
-      onSuccess: function (options) {
-        // success
-        //действие при успешной оплате
-      },
-      onFail: function (reason, options) {
-        // fail
-        //действие при неуспешной оплате
-      },
-      onComplete: function (paymentResult, options) {
-        //Вызывается как только виджет получает от api.cloudpayments ответ с результатом транзакции.
-        //например вызов вашей аналитики Facebook Pixel
-      },
-    }
+    onFail: function (reason, options) {
+      // fail
+      //действие при неуспешной оплате
+    },
+    onComplete: function (paymentResult, options) {
+      //Вызывается как только виджет получает от api.cloudpayments ответ с результатом транзакции.
+      //например вызов вашей аналитики Facebook Pixel
+    },
+  }
   );
 };
 $('.js-donation-form-btn').off('click');
-$('.js-donation-form-btn').on('click',pay);
+$('.js-donation-form-btn').on('click', pay);

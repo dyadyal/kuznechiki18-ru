@@ -305,7 +305,7 @@ this.pay = function () {
       //options
       publicId: 'pk_e8e765af966f938a24d85a856d619', //id из личного кабинета
       description: 'Оплата товаров в example.com', //назначение
-      amount: amount, //сумма
+      amount: parseFloat(amount), //сумма
       currency: 'RUB', //валюта
       accountId: 'user@example.com', //идентификатор плательщика (необязательно)
       invoiceId: '1234567', //номер заказа  (необязательно)
